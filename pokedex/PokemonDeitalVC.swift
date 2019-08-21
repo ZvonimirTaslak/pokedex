@@ -26,7 +26,7 @@ class PokemonDeitalVC: UIViewController {
     var pokemon: Pokemon!
     
     @IBAction func backButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
