@@ -23,6 +23,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = .red
+        navigationController?.navigationBar.tintColor = .white
+        
         collection.delegate = self
         collection.dataSource = self
         searchBar.delegate = self
@@ -91,8 +95,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             poke = pokemon[indexPath.row]
         }
         
-        performSegue(withIdentifier: "PokemonDeitalVC", sender: poke)
+        //performSegue(withIdentifier: "PokemonDeitalVC", sender: poke)
         
+        navigationController?.pushViewController(PokemonDeitalVC(pokemon: poke), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
